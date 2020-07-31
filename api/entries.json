@@ -1,0 +1,30 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+        "MoodId": 1
+      },
+    {
+      "id": 2,
+      "date": "7/17/2020",
+      "concept": "Fundamentals Workshop",
+      "entry": "We reviewed a lot of what we have learned so far in JavaScript.",
+      "MoodId": 2
+      
+    },
+    {
+      "id": 3,
+      "date": "7/16/2020",
+      "concept": "Filtering in JavaScript",
+      "entry": "We learned how to filter certain objects to be in there own array on the webpage",
+      "MoodId": 3
+      
+      }
+  ]
+
+  
+
+}

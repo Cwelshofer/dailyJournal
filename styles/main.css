@@ -1,0 +1,52 @@
+body {
+  background-color: lightgrey;
+  color: blue;
+}
+
+
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: fantasy;
+  letter-spacing: 2px;
+}
+
+.siteLogo {
+height: 12rem;
+
+}
+
+.title{
+text-align: center;
+line-height: 3px
+}
+
+.header {
+display: flex
+}
+
+.journalEntry {
+display: flex;
+flex-direction: column;
+width: 30em;
+height: 85px;
+
+}
+
+.moodEntry {
+display: flex;
+flex-direction: column;
+width: 30em;
+
+}
+
+.concept {
+display: flex;
+flex-direction: column;
+width: 30em;
+}
+
+.dateOfEntry {
+display: flex;
+flex-direction: column;
+width: 30em;
+}
