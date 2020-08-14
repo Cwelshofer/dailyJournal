@@ -7,10 +7,11 @@ import { saveJournalEntry } from "./JournalDataProvider.js"
  */
 export const JournalEntryComponent = (entry) => {
     return `
-        <section id="entry--${entry.id.label}" class="journalEntry">
-           <div class="journal__date">${entry.date.label}</div>
-           <div class="journal__concept">${entry.concept.label}</div>
-           <div class="journal__entry">${entry.entry.label}</div>
+        <section id="entry--${entry.id}" class="journalEntry">
+           <div class="journal__date">${entry.date}</div>
+           <div class="journal__concept">${entry.concept}</div>
+           <div class="journal__entry">${entry.entry}</div>
+           <div class="journal__mood">${entry.mood.label}</div>
         </section>
     `
 }
