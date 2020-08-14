@@ -1,4 +1,22 @@
-{
+{ 
+  "moods": [
+  {
+      "id": 1,
+      "label": "Happy"
+  },
+  {
+      "id": 2,
+      "label": "Sad"
+  },
+  {
+    "id": 3,
+    "label": "Angry"
+  },
+  {
+    "id": 4,
+    "label": "Bored"
+  }
+],
   "entries": [
     {
       "id": 1,
