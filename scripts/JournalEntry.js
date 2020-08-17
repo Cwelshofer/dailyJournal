@@ -12,6 +12,7 @@ export const JournalEntryComponent = (entry) => {
            <div class="journal__concept">${entry.concept}</div>
            <div class="journal__entry">${entry.entry}</div>
            <div class="journal__mood">${entry.mood.label}</div>
+           
         </section>
     `
 }
@@ -30,9 +31,9 @@ eventHub.addEventListener("click", clickEvent => {
             date: entryDate.value,
             concept: entryConcepts.value,
             entry: entryEntry.value,
-            mood: entryMood.value
-        } 
-        debugger
+            moodId: parseInt(entryMood.value)
+            
+        };
         saveJournalEntry(newEntry)
 
         }

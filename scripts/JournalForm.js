@@ -1,6 +1,13 @@
+// import { useMoods, getMoods } from "./MoodDataProvider.js";
+
+import { getMoods, useMoods } from "./moods/MoodDataProvider.js"
+
 const contentTarget = document.querySelector(".main")
 
 export const journalEntryComponent = () => {
+  getMoods().then( () => {
+    const copiedMoods = useMoods()
+
     
     contentTarget.innerHTML = `
     <div class="content--left">
@@ -22,10 +29,13 @@ export const journalEntryComponent = () => {
         <fieldset class="moodEntry">
           <label for="moods">Mood:</label>
           <select name="moods" id="moods">
-            <option value="Happy">Happy</option>
-            <option value="Sad">Sad</option>
-            <option value="Angry">Angry</option>
-            <option value="Bored">Bored</option>
+          ${
+            copiedMoods.map(
+                (mood) => {
+                    return `<option value="${ mood.id }">${ mood.label }</option>`
+                }
+            ).join("")
+        }
           </select>
         </fieldset>
         <article class="recordButton">
@@ -34,5 +44,23 @@ export const journalEntryComponent = () => {
         <article id="entryLog">
         </article>
     </div>
-    `
+    `;
+  })
 }
+
+
+// const render = () => {
+//   contentTarget.innerHTML = `
+//   ${
+//     allMoods.map(
+//         (mood) => {
+//             return `<option id="mood--${ mood.id }">${ mood.label }</option>`
+//         }
+//     ).join("")
+// }
+//   `
+// }
+
+// export const MoodForm = () => {
+//   render()
+// }
