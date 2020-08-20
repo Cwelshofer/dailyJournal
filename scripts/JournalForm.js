@@ -1,13 +1,52 @@
-// import { useMoods, getMoods } from "./MoodDataProvider.js";
 
+import { getInstructors, useInstructors } from "./instructors/instructorsDataProvider.js";
 import { getMoods, useMoods } from "./moods/MoodDataProvider.js"
-
+import { getJournalEntries, useJournalEntries} from "./JournalDataProvider.js";
 const contentTarget = document.querySelector(".main")
+const eventHub = document.querySelector(".main")
+
+
+eventHub.addEventListener("editEntryButtonClicked", () => {
+  editJournalEntry()
+  console.log("edit") 
+ 
+});
+  const editJournalEntry = () => {
+    console.log("edit event")
+    const entryMatchId = event.detail.entryId;
+    const entriesCollection = useJournalEntries();
+
+    const entryToEdit = entriesCollection.find((entry) => {
+      return entryMatchId === entry.id;
+    });
+
+        const entryDate = document.querySelector("#journalDate");
+        const entryConcepts = document.querySelector("#concepts");
+        const entryEntry = document.querySelector("#journalTextArea");
+        const entryMood = document.querySelector("#moods");
+        const entryInstructor = document.querySelector("#instructors");
+        const editEntryId = document.querySelector("#entryId");
+
+        entryDate.value = entryToEdit.date;
+        entryConcepts.value = entryToEdit.concept;
+        entryEntry.value = entryToEdit.entry;
+        entryMood.value = entryToEdit.mood.id;
+        entryInstructor.value = entryToEdit.instructor.id;
+        editEntryId.value = entryMatchId
+
+};
+
+        
+            
+
 
 export const journalEntryComponent = () => {
-  getMoods().then( () => {
+  
+  getMoods().then(
+    getInstructors().then(() => {
+    const copiedInstructors = useInstructors()
     const copiedMoods = useMoods()
-
+  
     
     contentTarget.innerHTML = `
     <div class="content--left">
@@ -22,7 +61,7 @@ export const journalEntryComponent = () => {
           <input type="text" style="" id="concepts" width: 126px;">
         </fieldset>
         <fieldset class="journalEntry">
-          <label for="journalEntry">Journal Entry</label>
+          <label id=journalLabel for="journalEntry">Journal Entry</label>
           <textarea id="journalTextArea" name="journalEntry" rows="4" cols="50"
             style="margin: 0px 347px 0px 0px; width: 128px; height: 52px;"></textarea>
         </fieldset>
@@ -37,6 +76,16 @@ export const journalEntryComponent = () => {
             ).join("")
         }
           </select>
+          <select name="instructors" id="instructors">
+          ${
+            copiedInstructors.map(
+                (instructor) => {
+                    return `<option value="${ instructor.id }">${ instructor.first_name } ${ instructor.last_name }</option>`
+                }
+            ).join("")
+        }
+          </select>
+          <input type="hidden" name="entryId" id="entryId" value="">
         </fieldset>
         <article class="recordButton">
           <button id="journalRecordButton" type="button">Record Journal Entry</button>
@@ -44,23 +93,8 @@ export const journalEntryComponent = () => {
         <article id="entryLog">
         </article>
     </div>
-    `;
-  })
-}
+      `;
+    
+})
+)}
 
-
-// const render = () => {
-//   contentTarget.innerHTML = `
-//   ${
-//     allMoods.map(
-//         (mood) => {
-//             return `<option id="mood--${ mood.id }">${ mood.label }</option>`
-//         }
-//     ).join("")
-// }
-//   `
-// }
-
-// export const MoodForm = () => {
-//   render()
-// }

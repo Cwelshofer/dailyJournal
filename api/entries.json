@@ -1,4 +1,16 @@
 {
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Steve",
+      "last_name": "BrownLee"
+    },
+    {
+      "id": 2,
+      "first_name": "Kristen",
+      "last_name": "Norris"
+    }
+  ],
   "moods": [
     {
       "id": 1,
@@ -19,39 +31,28 @@
   ],
   "entries": [
     {
-      "id": 1,
-      "date": "07/24/2025",
-      "concept": "HTML & CSS",
-      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "moodId": 1
+      "date": "2020-09-05",
+      "concept": "yolo",
+      "entry": "yolo brolo",
+      "moodId": 2,
+      "instructorId": "2",
+      "id": 8
     },
     {
-      "id": 2,
-      "date": "7/17/2020",
-      "concept": "Fundamentals Workshop",
-      "entry": "We reviewed a lot of what we have learned so far in JavaScript.",
-      "moodId": 2
-    },
-    {
-      "id": 3,
-      "date": "7/16/2020",
-      "concept": "Filtering in JavaScript",
-      "entry": "We learned how to filter certain objects to be in there own array on the webpage",
-      "moodId": 3
-    },
-    {
-      "date": "2020-08-19",
-      "concept": "kkkk",
-      "entry": "lllll",
+      "date": "2020-08-13",
+      "concept": "hey hey ",
+      "entry": "hey hey",
       "moodId": 1,
-      "id": 4
+      "instructorId": "1",
+      "id": 9
     },
     {
-      "date": "2020-08-14",
-      "concept": "yoooooo",
-      "entry": "yoooooooo",
-      "moodId": 4,
-      "id": 5
+      "date": "2020-08-11",
+      "concept": "!!!",
+      "entry": "whatever!!",
+      "moodId": 2,
+      "instructorId": "2",
+      "id": 10
     }
   ]
 }
